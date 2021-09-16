@@ -8,4 +8,6 @@ api.route("/").get(getTags);
 
 api.route("/:id").get(getTag);
 
+api.route("/:id").get(getTag);
+
 module.exports = api;

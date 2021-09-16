@@ -8,4 +8,6 @@ api.route("/").get(getCities);
 
 api.route("/:id").get(getCity);
 
+api.route("/:id").get(getCity);
+
 module.exports = api;

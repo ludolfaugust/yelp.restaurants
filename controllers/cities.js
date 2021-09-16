@@ -2,7 +2,7 @@ const City = require("../models/City");
 
 const getCities = async (req, res) => {
   try {
-    const cities = await Cities.find();
+    const cities = await City.find();
     console.log(cities);
     res.json({
       success: true,
