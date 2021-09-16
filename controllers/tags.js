@@ -1,35 +1,35 @@
-// const Tag = require("../models/Tag");
+const Tag = require("../models/Tag");
 
-// const getTags = async (req, res) => {
-//   try {
-//     const cities = await Cities.find();
-//     console.log(cities);
-//     res.json({
-//       success: true,
-//       data: cities,
-//       msg: "show all cities",
-//     });
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
+const getTags = async (req, res) => {
+try {
+const tags = await Tag.find();
+ console.log(tags);
+ res.json({
+      success: true,
+      data: tags,
+      msg: "show all tags",
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-// const getCity = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const city = await City.findById(id);
+const getTag = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const tag = await Tag.findById(id);
 
-//     res.json({
-//       msg: `show city with id ${id}`,
-//       success: true,
-//       data: city,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
+    res.json({
+      msg: `show tag with id ${id}`,
+      success: true,
+      data: tag,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-// module.exports = {
-//   getCities,
-//   getCity,
-// };
+module.exports = {
+ getTags, 
+ getTag,
+};
