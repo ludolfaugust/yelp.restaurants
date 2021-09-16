@@ -1,13 +1,18 @@
 require('dotenv').config();
 require('colors');
+const cors = require('cors');
+
+
 const express = require('express');
 
+
 const connectDB = require('./dbinit.js');
-const users = require('./api/restaurants');
+const restaurants = require('./api/restaurants');
 const server = express();
 const PORT = process.env.PORT || 5000;
 
 connectDB();
+server.use(cors());
 
 server.use(express.json());
 server.get('/', (req, res) => res.send('Welcome to Yelp!'));
