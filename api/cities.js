@@ -14,7 +14,7 @@ api
 
 api
   .route('/:id')
-  .get(getCities)
+  .get(getCity)
   
 
 module.exports = api;
