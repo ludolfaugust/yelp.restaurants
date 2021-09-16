@@ -1,9 +1,11 @@
 const Restaurant = require("../models/Restaurant");
 const City = require("../models/City");
+const Tag = require("../models/Tag");
 
 const getRestaurants = async (req, res) => {
   try {
-    const restaurants = await Restaurant.find().populate("city");
+    const restaurants = await Restaurant.find().populate("city tag");
+
     console.log(restaurants);
     res.json({
       success: true,
