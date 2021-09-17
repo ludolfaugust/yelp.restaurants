@@ -1,16 +1,16 @@
 const express = require("express");
 
-const { getTags, getTag } = require("../controllers/tags");
+const { getComments, getComment} = require("../controllers/comments");
 
 const api = express.Router();
 
 api
 .route("/")
-.get(getTags);
+.get(getComments);
 
 api
 .route("/:id")
-.get(getTag);
+.get(getComment);
 
 
 module.exports = api;
