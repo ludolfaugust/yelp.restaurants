@@ -4,14 +4,13 @@ const Tag = require("../models/Tag");
 
 const getRestaurants = async (req, res) => {
   try {
-    console.log(req.query);
     const restaurants = await Restaurant.find(req.query).populate("city tag");
 
     console.log(restaurants);
     res.json({
       success: true,
       data: restaurants,
-      msg: "show all users",
+      msg: "show all restaurants",
     });
   } catch (err) {
     console.log(err);
